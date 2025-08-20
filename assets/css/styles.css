@@ -69,3 +69,18 @@ footer {
 .carousel-fade .carousel-item {
   transition: opacity 2.5s ease-in-out;
 }
+
+.navbar .btn {
+  font-weight: 500;
+  padding: 6px 12px;
+}
+
+.modal-content {
+  border-radius: 10px;
+}
+.modal-header {
+  border-bottom: none;
+}
+.btn-outline-danger {
+  font-weight: 500;
+}

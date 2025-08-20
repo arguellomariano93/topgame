@@ -21,12 +21,6 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-
-<!-- <header class="bg-dark text-white text-center py-4">
-  <h1><i class="fas fa-futbol"></i> ATC | Reserva tu cancha al instante</h1>
-  <p>Explorá las canchas disponibles en tu ciudad y en tiempo real</p>
-</header> -->
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
   <div class="container">
@@ -36,58 +30,29 @@
     </button>
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#canchas">Canchas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#mapa">Mapa</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#canchas">
+            <i class="fas fa-futbol me-1"></i> Canchas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#mapa">
+            <i class="fas fa-map-marked-alt me-1"></i> Mapa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">
+            <i class="fas fa-envelope me-1"></i> Contacto
+          </a>
+        </li>
       </ul>
+      <!-- Contenedor dinámico -->
+      <div id="usuarioNavbar">
+        <!-- Aquí se insertará el contenido según el estado de sesión -->
+      </div>      
     </div>
   </div>
 </nav>
-<!-- Hero -->
-<!-- <section class="hero text-white text-center d-flex align-items-center justify-content-center" style="background-image: url('assets/img/banner2.jpg'); height: 80vh; background-size: cover;">
-  <div class="bg-dark bg-opacity-50 p-5 rounded">
-    <h1 class="display-4">Reservá tu cancha en segundos</h1>
-    <p class="lead">Fútbol, padel y tenis en Formosa y alrededores</p>
-    <a href="#canchas" class="btn btn-success btn-lg mt-3"><i class="fas fa-calendar-check"></i> Ver disponibilidad</a>
-  </div>
-</section> -->
-
-<!-- Carrusel -->
-<!-- <div id="bannerCarrusel" class="hero carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/img/banner2.jpg" class="d-block w-100" alt="Banner 1">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-5 rounded">
-        <h1 class="display-4">Reservá tu cancha en segundos</h1>
-        <p class="lead">Fútbol, padel y tenis en Formosa y alrededores</p>
-        <a href="#canchas" class="btn btn-success btn-lg mt-3"><i class="fas fa-calendar-check"></i> Ver disponibilidad</a>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="assets/img/banner3.jpg" class="d-block w-100" alt="Banner 2">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-5 rounded">
-        <h1 class="display-4">Reservá tu cancha en segundos</h1>
-        <p class="lead">Fútbol, padel y tenis en Formosa y alrededores</p>
-        <a href="#canchas" class="btn btn-success btn-lg mt-3"><i class="fas fa-calendar-check"></i> Ver disponibilidad</a>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="assets/img/banner4.jpg" class="d-block w-100" alt="Banner 2">
-      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-5 rounded">
-        <h1 class="display-4">Reservá tu cancha en segundos</h1>
-        <p class="lead">Fútbol, padel y tenis en Formosa y alrededores</p>
-        <a href="#canchas" class="btn btn-success btn-lg mt-3"><i class="fas fa-calendar-check"></i> Ver disponibilidad</a>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarrusel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#bannerCarrusel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div> -->
-
 <section class="hero-container">
   <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
     <div class="carousel-inner">
@@ -102,14 +67,33 @@
       </div>
     </div>
   </div>
-
   <div class="hero-overlay text-center text-white bg-dark bg-opacity-75 p-4 rounded">
-    <h1 class="display-8 fw-bold">Reservá tu cancha en segundos</h1>
-    <p class="lead">Canchas de Fútbol 5 sintético en Formosa - Capital</p>
-    <a href="#reserva" class="btn btn-success btn-lg mt-3"><i class="fas fa-calendar-check"></i> Ver disponibilidad</a>
-  </div>
-</section>
+  <h1 class="display-8 fw-bold">Reservá tu cancha en segundos</h1>
+  <p class="lead">Canchas de Fútbol 5 sintético en Formosa - Capital</p>
 
+  <form id="formDisponibilidad" class="row justify-content-center mt-4 g-2">
+    <!-- Fecha -->
+    <div class="col-md-4">
+      <input type="date" id="fecha" class="form-control" required>
+    </div>
+
+    <!-- Hora -->
+    <div class="col-md-4">
+      <select id="hora" class="form-select" required>
+        <option value="">Seleccionar hora</option>
+        <!-- Horas generadas por JS -->
+      </select>
+    </div>
+
+    <!-- Botón -->
+    <div class="col-md-4">
+      <button type="submit" class="btn btn-success w-100">
+        <i class="fas fa-calendar-check"></i> Ver disponibilidad
+      </button>
+    </div>
+  </form>
+</div>
+</section>
 
 <!-- Canchas disponibles -->
 <section id="canchas" class="container py-5">
@@ -147,8 +131,6 @@
     </div>
   </div>
 </section>
-
-
 <section id="mapa" class="container py-5">
   <h2 class="text-center mb-4">Ubicación Las Cañitas Fútbol 5</h2>
   <div class="row">
@@ -156,11 +138,9 @@
     <div class="col-md-6 mb-4">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7160.702395113155!2d-58.18673472228998!3d-26.18525149999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945ca56bc7b28725%3A0x7a858c7630f1eb43!2zTGFzIENhw7FpdGFzIEbDunRib2wgNS83!5e0!3m2!1ses-419!2sar!4v1755696645721!5m2!1ses-419!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      
     </div>
-
     <!-- Fichas desplegables -->
     <div class="col-md-6">
-      <div class="accordion" id="accordionCancha">
-        
+      <div class="accordion" id="accordionCancha">        
         <!-- Ubicación -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingUbicacion">
@@ -174,7 +154,6 @@
             </div>
           </div>
         </div>
-
         <!-- Horarios -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingHorarios">
@@ -188,7 +167,6 @@
             </div>
           </div>
         </div>
-
         <!-- Servicios -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingServicios">
@@ -208,13 +186,10 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
-
-
 <!-- Beneficios -->
 <section class="bg-light py-5">
   <div class="container text-center">
@@ -238,48 +213,267 @@
     </div>
   </div>
 </section>
-
-
-<!-- <section class="container my-5">
-  <form id="reservaForm" class="card p-4 shadow">
-    <h3 class="mb-4">Solicitá tu turno</h3>
-    <div class="mb-3">
-      <label for="ciudad" class="form-label">Ciudad</label>
-      <input type="text" id="ciudad" name="ciudad" class="form-control" required>
-    </div>
-    <div class="mb-3">
-      <label for="deporte" class="form-label">Deporte</label>
-      <select id="deporte" name="deporte" class="form-select" required>
-        <option value="">Seleccionar</option>
-        <option value="Fútbol 5">Fútbol 5</option>
-        <option value="Padel">Padel</option>
-        <option value="Tenis">Tenis</option>
-      </select>
-    </div>
-    <div class="mb-3">
-      <label for="fecha" class="form-label">Fecha</label>
-      <input type="date" id="fecha" name="fecha" class="form-control" required>
-    </div>
-    <div class="mb-3">
-      <label for="hora" class="form-label">Hora</label>
-      <input type="time" id="hora" name="hora" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-success w-100"><i class="fas fa-search"></i> Buscar cancha</button>
-  </form>
-</section> -->
-
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-4">
   <p>&copy; 2025 TopGame | Reservas deportivas en Formosa | Desarrollado por Valdéz Elías</p>
   <p><i class="fas fa-envelope"></i> contacto@topgame.com</p>
 </footer>
-
-
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- SweetAlert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Custom JS -->
 <script src="assets/js/main.js"></script>
+
+<!-- Modal -->
+<div class="modal fade" id="modalAuth" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitulo">Autenticación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formAuth">
+          <!-- Nombre (solo en registro) -->
+          <div id="grupoNombre" class="mb-3 d-none">
+            <label for="nombre" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="nombre">
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="mb-3 position-relative">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" required>
+            <button type="button" class="btn btn-sm position-absolute top-50 end-0 me-2" id="togglePassword">
+              <i class="fa fa-eye"></i>
+            </button>
+          </div>
+
+          <!-- Repetir contraseña (solo en registro) -->
+          <div id="grupoRepetir" class="mb-3 d-none position-relative">
+            <label for="repetir" class="form-label">Repetir contraseña</label>
+            <input type="password" class="form-control" id="repetir">
+            <button type="button" class="btn btn-sm position-absolute top-50 end-0 me-2" id="toggleRepetir">
+              <i class="fa fa-eye"></i>
+            </button>
+          </div>
+
+          <!-- Botón de acción -->
+          <button type="submit" class="btn w-100" id="btnAccion">Continuar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script>
+  function actualizarNavbar() {
+    const contenedor = document.getElementById("usuarioNavbar");
+    const usuario = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+    if (usuario) {
+      contenedor.innerHTML = `
+        <div class="dropdown">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <i class="fas fa-user-circle"></i> ${usuario.nombre}
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><span class="dropdown-item-text text-muted">${usuario.email}</span></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+          </ul>
+        </div>
+      `;
+    } else {
+      contenedor.innerHTML = `        
+        <button class="btn btn-outline-success" onclick="mostrarFormulario('registro')">
+          <i class="fas fa-user-plus"></i> Registrarse
+        </button>
+        <button class="btn btn-outline-light me-2" onclick="mostrarFormulario('login')">
+          <i class="fas fa-user"></i> Iniciar sesión
+        </button>
+      `;
+    }
+  }
+
+  function cerrarSesion() {
+    Swal.fire({
+      title: "¿Cerrar sesión?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Sí, salir",
+      cancelButtonText: "Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("usuarioActivo");
+        actualizarNavbar();
+        Swal.fire({
+          title: "Sesión cerrada",
+          text: `Hasta pronto`,
+          icon: "info",
+          timer: 3000,
+          showConfirmButton: false
+        });  
+      }
+    });
+  }
+
+  // Ejecutar al cargar
+  actualizarNavbar();
+</script>
+<script>
+
+  function togglePasswordVisibility(inputId, toggleId) {
+    const input = document.getElementById(inputId);
+    const toggle = document.getElementById(toggleId);
+    const icon = toggle.querySelector("i");
+
+    toggle.addEventListener("click", () => {
+      const isVisible = input.type === "text";
+      input.type = isVisible ? "password" : "text";
+      icon.classList.toggle("fa-eye");
+      icon.classList.toggle("fa-eye-slash");
+    });
+  }
+
+  togglePasswordVisibility("password", "togglePassword");
+  togglePasswordVisibility("repetir", "toggleRepetir");
+
+  let modoActual = "login";
+
+  function mostrarFormulario(modo) {
+    modoActual = modo;
+
+    const modal = new bootstrap.Modal(document.getElementById("modalAuth"));
+    document.getElementById("modalTitulo").textContent = modo === "login" ? "Iniciar sesión" : "Registrarse";
+    document.getElementById("btnAccion").textContent = modo === "login" ? "Iniciar sesión" : "Registrarse";
+    document.getElementById("btnAccion").className = modo === "login" ? "btn btn-primary w-100" : "btn btn-success w-100";
+
+    document.getElementById("grupoNombre").classList.toggle("d-none", modo === "login");
+    document.getElementById("grupoRepetir").classList.toggle("d-none", modo === "login");
+
+    document.getElementById("formAuth").reset();
+    modal.show();
+  }
+
+  document.getElementById("formAuth").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const email = document.getElementById("email").value.trim().toLowerCase();
+    const password = document.getElementById("password").value;
+    const repetir = document.getElementById("repetir").value;
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    if (modoActual === "registro") {
+      if (!nombre || !email || !password || !repetir) {
+        Swal.fire("Campos incompletos", "Completá todos los datos", "warning");
+        return;
+      }
+
+      if (password.length < 6) {
+        Swal.fire("Contraseña débil", "Usá al menos 6 caracteres", "info");
+        return;
+      }
+
+      if (password !== repetir) {
+        Swal.fire("Contraseñas distintas", "Verificá que coincidan", "error");
+        return;
+      }
+
+      if (usuarios.some(u => u.email === email)) {
+        Swal.fire("Correo ya registrado", "Probá iniciar sesión", "error");
+        return;
+      }
+
+      usuarios.push({ nombre, email, password });
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      actualizarNavbar();
+
+      Swal.fire({
+        title: "Registro exitoso",
+        text: `Bienvenido, ${nombre}`,
+        icon: "success",
+        timer: 3000,
+        showConfirmButton: false
+      });
+
+      bootstrap.Modal.getInstance(document.getElementById("modalAuth")).hide();
+
+    } else {
+      const usuario = usuarios.find(u => u.email === email && u.password === password);
+
+      if (usuario) {
+        Swal.fire({
+          title: "Sesión iniciada",
+          text: `Hola de nuevo, ${usuario.nombre}`,
+          icon: "success",
+          timer: 3000,
+          showConfirmButton: false
+        });        
+        localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+        actualizarNavbar();
+        bootstrap.Modal.getInstance(document.getElementById("modalAuth")).hide();
+      } else {
+        Swal.fire("Datos incorrectos", "Verificá tu correo y contraseña", "error");
+      }
+    }
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const horaSelect = document.getElementById("hora");
+    
+    // Horas del día actual: 15:00 a 23:00
+    for (let h = 15; h <= 23; h++) {
+      const horaTexto = h.toString().padStart(2, '0') + ":00";
+      const option = document.createElement("option");
+      option.value = horaTexto;
+      option.textContent = horaTexto + " hs";
+      horaSelect.appendChild(option);
+    }
+
+    // Horas del día siguiente: 00:00 a 03:00
+    for (let h = 0; h <= 2; h++) {
+      const horaTexto = h.toString().padStart(2, '0') + ":00";
+      const option = document.createElement("option");
+      option.value = horaTexto;
+      option.textContent = horaTexto + " hs (día siguiente)";
+      horaSelect.appendChild(option);
+    }
+
+
+    // Fecha mínima: hoy
+    const fechaInput = document.getElementById("fecha");
+    const hoy = new Date().toISOString().split("T")[0];
+    fechaInput.setAttribute("min", hoy);
+  });
+
+  // Enviar datos a otra página
+  document.getElementById("formDisponibilidad").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const fecha = document.getElementById("fecha").value;
+    const hora = document.getElementById("hora").value;
+
+    if (!fecha || !hora) {
+      Swal.fire("Faltan datos", "Seleccioná fecha y hora", "warning");
+      return;
+    }
+
+    // Redirigir con parámetros GET
+    window.location.href = `disponibilidad.php?fecha=${fecha}&hora=${hora}`;
+  });
+</script>
+
+</div>
 </body>
 </html>
