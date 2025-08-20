@@ -9,7 +9,7 @@
   <meta name="author" content="Valdéz Elías">
   <meta property="og:title" content="Las Cañitas Fútbol 5 | TopGame">
   <meta property="og:description" content="Reservá tu cancha de fútbol 5 al instante. Canchas disponibles en Las Cañitas, Formosa.">
-  <meta property="og:image" content="https://topgame.puzzlesystem.online/img/preview.png">
+  <meta property="og:image" content="https://topgame.puzzlesystem.online/assets/img/preview.png">
   <meta property="og:url" content="https://topgame.puzzlesystem.online">
   <meta property="og:type" content="website">
   <link rel="icon" href="/topgame/favicon.png" type="image/png">
