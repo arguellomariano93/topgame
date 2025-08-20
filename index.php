@@ -2,11 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Las Cañitas Fútbol | TopGame</title>
+  <title>Las Cañitas Fútbol 5 | TopGame</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Reserva tu cancha de fútbol 5 al instante. Canchas disponibles en Formosa, Argentina.">
   <meta name="keywords" content="fútbol 5, reservas, canchas, Formosa, TopGame">
   <meta name="author" content="Valdéz Elías">
+  <meta property="og:title" content="Las Cañitas Fútbol 5 | TopGame">
+  <meta property="og:description" content="Reservá tu cancha de fútbol 5 al instante. Canchas disponibles en Las Cañitas, Formosa.">
+  <meta property="og:image" content="https://topgame.puzzlesystem.online/img/preview.png">
+  <meta property="og:url" content="https://topgame.puzzlesystem.online">
+  <meta property="og:type" content="website">
   <link rel="icon" href="/topgame/favicon.png" type="image/png">
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
